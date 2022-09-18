@@ -7,6 +7,11 @@ from game_manager import GameManager
 
 class Game:
     def __init__(self):
+        # window icon
+        icon = pg.image.load("assets/others/tetris_logo.png").convert_alpha()
+        pg.display.set_caption("Tetris")
+        pg.display.set_icon(icon)
+
         # blitting surfaces
         self.display_surf = pg.display.get_surface()
         self.grid_surf = pg.Surface((GRID_W, GRID_H))
@@ -88,6 +93,5 @@ class Game:
 
 if __name__ == "__main__":
     pg.init()
-    pg.display.set_caption("Tetris")
     game = Game()
     game.run()
